@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    background-color: navy;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+main{
+    padding: 20px;
+}
+
+footer{
+    background-color: lightgray;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 15px 30px;
+}
+
+.nav-link{
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link a{
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-link a:hover{
+    color: #F59E0B;
+}
+
+.logo{
+    color: white;
+}
+
+.cart a{
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+.cart a:hover{
+    background-color: orange;
+}
+
+.menu-toggle{
+    display: none;
+}
+
+.product-card{
+    width: 244px;
+    padding: 30px;
+    border: 2px solid black;
+
+}
+
+/* Responsive Navbar */
+
+@media (max-width:600px) {
+    
+    .nav-link,
+    .cart{
+        display: none;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .nav-link.active{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
