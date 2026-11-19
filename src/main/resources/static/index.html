@@ -4,8 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stockfy</title>
+
+    <link rel="stylesheet" href="/src/main/resources/static/assets/css/style.css">
 </head>
 <body>
+
+    <div class="container">
+
+        <header>
+            <nav class="nav-bar">
+                <div class="logo">
+                    Stockfy.
+                </div>
+
+                <ul class="nav-link" id="navLinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <div class="cart">
+                    <a href="#">cart</a>
+                </div>
+                <button class="menu-toggle" id="menuButton">☰</button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-section">
+                <h1>Find Your Next Favorite Product</h1>
+                <p>Discover quality products at great prices.</p>
+                <div class="search-input">
+                    <input type="text" placeholder="Search products...">
+                </div>
+            </section>
+
+            <section class="product-section">
+                <h2>Featured Products</h2>
+                
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h4>Wireless Headphones</h4>
+                    <h5>Rs. 8,500</h5>
+                    <button>Add to card</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h4>Smart Watch</h4>
+                    <h5>Rs. 12,000</h5>
+                    <button>Add to card</button>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>Stockfy</p>
+            <a href="">click here</a>
+        </footer>
+
+    </div>
     
+    <script src="/src/main/resources/static/assets/js/app.js"></script>
 </body>
 </html>
