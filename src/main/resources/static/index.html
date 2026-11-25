@@ -1,11 +1,100 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Stockfy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/main/resources/static/assets/css/style.css">
 </head>
+
 <body>
-    
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <nav class="nav-bar">
+
+                <div class="logo">
+                    Stockfy.
+                </div>
+
+                <ul class="nav-link" id="navLinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <div class="cart">
+                    <a href="#">Cart</a>
+                </div>
+
+                <button class="menu-toggle" id="menuButton">
+                    ☰
+                </button>
+
+            </nav>
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <main>
+
+            <!-- HERO SECTION -->
+            <section class="hero-section">
+
+                <h1>Find Your Next Favorite Product</h1>
+
+                <p>
+                    Discover quality products at great prices.
+                </p>
+
+                <div class="search-input">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search products..."
+                    >
+                </div>
+
+            </section>
+
+
+            <!-- PRODUCT SECTION -->
+            <section class="product-section">
+
+                <h2>Featured Products</h2>
+
+                <!-- Products will be loaded from database -->
+                <div class="product-grid" id="productGrid">
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>Stockfy</p>
+
+            <a href="#">Click here</a>
+
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/src/main/resources/static/assets/js/app.js"></script>
+
 </body>
+
 </html>
