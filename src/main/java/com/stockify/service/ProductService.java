@@ -7,5 +7,5 @@ public interface ProductService {
 
     void createProduct(ProductDTO productDTO);
 
-    Iterable<ProductEntity> getProduct();
+    Iterable<ProductDTO> getProduct();
 }
