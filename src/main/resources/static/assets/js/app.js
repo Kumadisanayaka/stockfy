@@ -13,7 +13,7 @@ async function loadProducts() {
 
     try {
 
-        const response = await fetch("http://localhost:8080/product/all");
+        const response = await fetch("http://localhost:8080/product");
 
         const products = await response.json();
 
