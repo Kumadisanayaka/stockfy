@@ -25,8 +25,9 @@ public class ProductController {
     }
 
     @GetMapping()
-    Iterable<ProductDTO> getProduct(){
+    Iterable<ProductDTO> getProduct
+            (@RequestParam(required = false,name = "name") String name){
 
-        return service.getProduct();
+        return service.getProduct(name);
     }
 }

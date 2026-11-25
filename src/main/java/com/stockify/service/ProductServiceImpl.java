@@ -25,12 +25,21 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Iterable<ProductDTO> getProduct() {
+    public Iterable<ProductDTO> getProduct(String name) {
 
         ArrayList<ProductDTO> productList = new ArrayList<>();
 
-        for (ProductEntity entity : productRepository.findAll()) {
-            productList.add(mapper.convertValue(entity,ProductDTO.class));
+        if (name != null){
+
+            for (ProductEntity entity : productRepository.findAllByNameLike("%" + name + "%")) {
+                productList.add(mapper.convertValue(entity,ProductDTO.class));
+            }
+
+        }else {
+
+            for (ProductEntity entity : productRepository.findAll()) {
+                productList.add(mapper.convertValue(entity, ProductDTO.class));
+            }
         }
 
         return productList;
