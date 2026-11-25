@@ -2,7 +2,6 @@ package com.stockify.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NonNull;
 
 @Entity
 @Table(name = "product")
@@ -10,8 +9,8 @@ import lombok.NonNull;
 public class ProductEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
     private Double price;
     private String description;
