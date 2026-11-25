@@ -1,31 +1,68 @@
-*{
+
+/* ========================================
+   1. CSS VARIABLES
+======================================== */
+
+:root {
+    /* Theme Colors */
+    --primary-color: #17233D;
+    --accent-color: #F59E0B;
+    --secondary-color: #2563EB;
+
+    /* Text Colors */
+    --text-color: #64748B;
+    --white-color: #FFFFFF;
+    --dark-color: #000000;
+
+    /* Background Colors */
+    --hero-bg-color: #F1F5F9;
+    --image-bg-color: #F8FAFC;
+
+    /* Border Colors */
+    --border-color: #E5E7EB;
+    --input-border-color: #D1D5DB;
+
+    /* Effects */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow-color: rgba(0, 0, 0, 0.15);
+    --focus-shadow-color: rgba(37, 99, 235, 0.15);
+}
+
+
+/* ========================================
+   2. GLOBAL STYLES
+======================================== */
+
+* {
     box-sizing: border-box;
 }
 
-header{
-    background-color: navy;
+
+/* ========================================
+   3. HEADER & NAVIGATION
+======================================== */
+
+header {
+    background-color: var(--primary-color);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-main{
-    padding: 20px;
-}
-
-footer{
-    background-color: lightgray;
-}
-
-.nav-bar{
+.nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid var(--border-color);
     padding: 15px 30px;
+    position: relative;
 }
 
-.nav-link{
+.logo {
+    color: var(--white-color);
+}
+
+.nav-link {
     display: flex;
     gap: 25px;
     list-style: none;
@@ -33,60 +70,261 @@ footer{
     margin: 0;
 }
 
-.nav-link a{
+.nav-link a {
     text-decoration: none;
-    color: white;
+    color: var(--white-color);
     transition: color 0.3s ease;
 }
 
-.nav-link a:hover{
-    color: #F59E0B;
+.nav-link a:hover {
+    color: var(--accent-color);
 }
 
-.logo{
-    color: white;
-}
-
-.cart a{
+.cart a {
     display: inline-block;
     padding: 8px 15px;
-    background-color: white;
+    background-color: var(--white-color);
     text-decoration: none;
-    color: black;
+    color: var(--dark-color);
     transition: background-color 0.3s ease;
 }
 
-.cart a:hover{
-    background-color: orange;
+.cart a:hover {
+    background-color: var(--accent-color);
 }
 
-.menu-toggle{
+.menu-toggle {
     display: none;
+    border: none;
+    background: transparent;
+    color: var(--white-color);
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.product-card{
-    width: 244px;
+
+/* ========================================
+   4. MAIN CONTENT
+======================================== */
+
+main {
+    padding: 20px;
+}
+
+
+/* ========================================
+   5. HERO SECTION
+======================================== */
+
+.hero-section {
+    padding: 70px 20px;
+    text-align: center;
+    background-color: var(--hero-bg-color);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 42px;
+}
+
+.hero-section p {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   6. SEARCH INPUT
+======================================== */
+
+.search-input {
+    max-width: 500px;
+    margin: 25px auto;
+}
+
+.search-input input {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid var(--input-border-color);
+}
+
+.search-input input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px var(--focus-shadow-color);
+}
+
+
+/* ========================================
+   7. PRODUCT SECTION
+======================================== */
+
+.product-section {
+    padding: 40px 20px;
+}
+
+.product-section h2 {
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   8. PRODUCT GRID & CARDS
+======================================== */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px var(--hover-shadow-color);
+}
+
+.product-card h4,
+.product-card h5 {
+    margin: 0;
+}
+
+.product-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.product-card h5 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.product-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-color);
+    letter-spacing: 0.2px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background-color: var(--image-bg-color);
+    padding: 10px;
+}
+
+.product-card button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.product-card button:hover {
+    background-color: var(--accent-color);
+}
+
+
+/* ========================================
+   9. FOOTER
+======================================== */
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
     padding: 30px;
-    border: 2px solid black;
-
+    text-align: center;
 }
 
-/* Responsive Navbar */
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
 
-@media (max-width:600px) {
-    
-    .nav-link,
-    .cart{
+footer a:hover {
+    color: var(--white-color);
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   10. RESPONSIVE DESIGN
+======================================== */
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    /* Navigation */
+
+    .nav-link {
         display: none;
     }
 
-    .menu-toggle{
+    .menu-toggle {
         display: block;
     }
 
-    .nav-link.active{
+    .cart {
+        margin-left: auto;
+        margin-right: 25px;
+    }
+
+    .nav-link.active {
         display: flex;
         flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 20px;
         gap: 15px;
+        z-index: 101;
+    }
+
+
+    /* Hero */
+
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+
+    /* Products */
+
+    .product-grid {
+        grid-template-columns: 1fr;
     }
 }
