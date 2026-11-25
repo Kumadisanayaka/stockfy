@@ -9,11 +9,11 @@ menuButton.addEventListener("click", function () {
 const productGrid = document.getElementById("productGrid");
 
 
-async function loadProducts() {
+async function loadProducts(name = "") {
 
     try {
 
-        const response = await fetch("http://localhost:8080/product");
+        const response = await fetch(`http://localhost:8080/product?name=${name}`);
 
         const products = await response.json();
 
@@ -51,4 +51,14 @@ async function loadProducts() {
 
 }
 
-loadProducts();
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",function () {
+    
+    const searchText = searchInput.value.toLowerCase().trim();
+
+   loadProducts(searchText);
+    
+});
+
+
